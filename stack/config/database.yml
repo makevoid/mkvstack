@@ -1,0 +1,18 @@
+defaults: &defaults
+  adapter: mysql
+  database: STACK_APP_NAME_development
+  username: root
+  password: 
+  host:     localhost
+
+development:
+  <<: *defaults
+
+test:
+  database: STACK_APP_NAME_test
+  <<: *defaults
+  
+production:
+  database: STACK_APP_NAME_production
+  password: 
+  <<: *defaults
