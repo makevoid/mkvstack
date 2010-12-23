@@ -1,5 +1,5 @@
 path = File.expand_path "../", __FILE__
 
 
-require "#{path}/phy"
+require "#{path}/app"
 run Sinatra::Application

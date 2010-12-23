@@ -4,5 +4,9 @@ require 'sinatra'
 require "#{path}/config/env"
 
 get "/" do
-  "hello world!"
+  haml :index
+end
+
+get '/css/main.css' do
+  sass :main
 end
