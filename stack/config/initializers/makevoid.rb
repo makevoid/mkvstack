@@ -10,7 +10,8 @@ DEVELOPER_NAME = "Francesco Canessa"
 
 require "haml"
 require "haml/template"
-# Haml::Template.options[:format] = :html4
+
+Haml::Template.options[:format] = :html5
 Haml::Template.options[:escape_html] = false
 
 

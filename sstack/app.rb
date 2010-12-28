@@ -3,6 +3,7 @@ require 'sinatra'
 
 require "#{path}/config/env"
 
+
 get "/" do
   haml :index
 end
