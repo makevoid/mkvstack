@@ -5,7 +5,7 @@ module ViewHelpers
   # basic texts
   
   def site_title
-    "#{APP_NAME}"
+    "#{APP_NAME.}"
   end
   
   def footer_text
