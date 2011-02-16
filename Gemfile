@@ -82,5 +82,6 @@ gem 'dm-active_model',      "~> 1.0.3", :git => "git://github.com/datamapper/dm-
  
 #gem 'haml', '~> 3.1.0', :git => "git://github.com/nex3/haml.git"
 gem 'haml', '~> 3.0.18' 
+gem "voidtools"
 
 gem "exception_notification", :git => "git://github.com/rails/exception_notification"
