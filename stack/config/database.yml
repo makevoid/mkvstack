@@ -14,5 +14,5 @@ test:
   
 production:
   database: STACK_APP_NAME_production
-  password: 
+  password: secret
   <<: *defaults
