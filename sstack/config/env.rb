@@ -1,3 +1,6 @@
+require 'bundler'
+require 'bundler/setup'
+
 set :haml, { :format => :html5 }
 
 
