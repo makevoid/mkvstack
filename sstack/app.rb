@@ -16,6 +16,9 @@ class App < Sinatra::Base
   require 'sinatra/content_for'
   helpers Sinatra::ContentFor
   set :method_override, true
+  
+  require "#{APP_PATH}/lib/view_helpers"
+  helpers ViewHelpers
 
   def not_found(object=nil)
     halt 404, "404 - Page Not Found"
