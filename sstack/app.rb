@@ -1,13 +1,20 @@
 require 'haml'
 require 'sass'
 require 'sinatra'
-enable :sessions
 
 path = File.expand_path "../", __FILE__
 APP_PATH = path
 
 class App < Sinatra::Base
   require "#{APP_PATH}/config/env"
+  
+  configure :development do # this way you can use thin, shotgun is so slow...
+    register Sinatra::Reloader
+    also_reload "#{APP_PATH}/controllers/*.rb"
+    also_reload "#{APP_PATH}/models/*.rb"
+    set :public, "public"
+    set :static, true
+  end
   
   set :haml, { :format => :html5 }
   require 'rack-flash'
