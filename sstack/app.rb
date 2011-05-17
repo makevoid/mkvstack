@@ -10,8 +10,7 @@ class App < Sinatra::Base
   
   configure :development do # this way you can use thin, shotgun is so slow...
     register Sinatra::Reloader
-    also_reload "#{APP_PATH}/controllers/*.rb"
-    also_reload "#{APP_PATH}/models/*.rb"
+    also_reload ["controllers/*.rb", "models/*.rb"]
     set :public, "public"
     set :static, true
   end
