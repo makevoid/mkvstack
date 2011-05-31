@@ -1,6 +1,7 @@
 require 'haml'
 require 'sass'
-require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/reloader'
 
 path = File.expand_path "../", __FILE__
 APP_PATH = path

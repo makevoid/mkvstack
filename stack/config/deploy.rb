@@ -124,7 +124,7 @@ namespace :db do
   task :toprod do
     # `rake db:seeds`
     `mysqldump -u root #{application}_development > db/#{application}_development.sql`
-    upload "db/#{application}_development.sql", "#{current_path}/db", :via => :scp
+    upload "db/#{application}_development.sql", "#{current_path}/db/#{application}_development.sql", :via => :scp
     run "mysql -u root --password=#{password} #{application}_production < #{current_path}/db/#{application}_development.sql"
   end
   
