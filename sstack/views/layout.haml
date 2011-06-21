@@ -1,5 +1,5 @@
 !!! Strict
-%html{ html_attrs("en_EN") }
+%html{ html_attrs("en") }
   %head
     %title Hello world
     %link{ href: "/css/main.css", rel: "stylesheet" }
@@ -24,8 +24,4 @@
     %script{ type: "text/javascript" }
       $(function(){
       = yield_content :jquery
-      });
-    :javascript
-      $(function(){
-        // dom ready
       });

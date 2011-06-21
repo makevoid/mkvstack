@@ -1,3 +1,6 @@
+# Rails3 Stack
+
+
 require 'extlib'
 #include FileUtils
 

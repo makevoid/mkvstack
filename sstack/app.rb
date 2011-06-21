@@ -9,7 +9,7 @@ APP_PATH = path
 class App < Sinatra::Base
   require "#{APP_PATH}/config/env"
   
-  configure :development do # this way you can use thin, shotgun is so slow...
+  configure :development do # use thin start
     register Sinatra::Reloader
     also_reload ["controllers/*.rb", "models/*.rb"]
     set :public, "public"
@@ -23,9 +23,6 @@ class App < Sinatra::Base
   require 'sinatra/content_for'
   helpers Sinatra::ContentFor
   set :method_override, true
-  
-  require "#{APP_PATH}/lib/view_helpers"
-  helpers ViewHelpers
 
   def not_found(object=nil)
     halt 404, "404 - Page Not Found"
