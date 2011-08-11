@@ -19,6 +19,7 @@
     position: relative
     top: 1px
 
+
 // clearfix
 
 *, html, body
@@ -83,8 +84,13 @@ a:hover
 
 input
   padding: 4px 6px
+  width: 300px
   font-size: 1.15em
-  margin: 6px 0
+  margin: 6px 0 12px
+  display: block
+input[type='submit'], input.submit
+  width: auto
+
 
 input[type='submit'], input.submit, a.button, nav a
   +button
