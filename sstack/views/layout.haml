@@ -11,13 +11,14 @@
     -# %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
     %script{ src: "/js/modernizr.js", type: "text/javascript" }
   %body{ class: body_class }
-    #container
-      %header
-        %h1 Hello world
-      %nav
-      #content
-        = yield
-      %footer
+    #wrap
+      #container
+        %header
+          %h1 Hello world
+        %nav
+        #content
+          = yield
+        %footer
     %script{ src: "/js/jquery.js", type: "text/javascript" }
     %script{ src: "/js/main.js", type: "text/javascript" }
     = yield_content :head
