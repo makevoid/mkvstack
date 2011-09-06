@@ -7,12 +7,13 @@
 - jquery
 - main.sass with css reset
 - mail and exception notifier
-- svn ignores
+- svn/git ignores
 - analytics
-- capistrano
+
 
 # TODO
 
-- add gitignore
 - rake tasks to update dependencies:
   - latest jquery
+- capistrano extract every config and make the file required by all config/deploy.rb(s)
+- package exception notification
