@@ -1,4 +1,3 @@
-
 set :application, "#{raise "Set up your application name in config/deploy.rb"}"
 
 set :domain,      "makevoid.com"
@@ -42,7 +41,7 @@ role :db,  domain, :primary => true
 
 
 after :deploy, "deploy:cleanup"
-after :deploy, "deploy:create_symlinks"
+#after :deploy, "deploy:create_symlinks"
 #after :deploy, "db:seeds"
 
 namespace :deploy do
@@ -54,7 +53,7 @@ namespace :deploy do
   
   desc "Create some symlinks from shared to public"
   task :create_symlinks do
-    run "cd #{current_path}/public; ln -s #{deploy_to}/shared/projects_src projects_src"
+    #run "cd #{current_path}/public; ln -s #{deploy_to}/shared/dir dir"
   end
   
 end
