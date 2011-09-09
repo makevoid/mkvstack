@@ -1,6 +1,6 @@
 # MKV stack
 
-## script to setup a new rails 3 application 
+## setup a new rails or sinatra application 
 
 - Gemfile
 - HAML application layout
