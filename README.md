@@ -7,9 +7,9 @@
 - jquery
 - main.sass with css reset
 - mail and exception notifier
-- svn ignores
+- svn/git ignores
 - analytics
-- capistrano
+
 
 
 for sinatra README.md see: [mkvstack/sinatra](https://github.com/makevoid/mkvstack/tree/master/sinatra)
@@ -20,3 +20,5 @@ for sinatra README.md see: [mkvstack/sinatra](https://github.com/makevoid/mkvsta
 
 - rake tasks to update dependencies:
   - latest jquery
+- capistrano extract every config and make the file required by all config/deploy.rb(s)
+- package exception notification
