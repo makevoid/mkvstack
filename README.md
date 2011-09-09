@@ -18,7 +18,9 @@
 
 # TODO
 
+- document everything on both rails and sinatra stacks
 - rake tasks to update dependencies:
   - latest jquery
 - capistrano extract every config and make the file required by all config/deploy.rb(s)
 - package exception notification
+
