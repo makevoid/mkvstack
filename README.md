@@ -11,8 +11,12 @@
 - analytics
 - capistrano
 
+
+for sinatra README.md see: [mkvstack/sinatra](https://github.com/makevoid/mkvstack/tree/master/sinatra)
+
+
+
 # TODO
 
-- add gitignore
 - rake tasks to update dependencies:
   - latest jquery
