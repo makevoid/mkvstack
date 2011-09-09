@@ -12,7 +12,7 @@
 
 
 
-for sinatra README.md see: [mkvstack/sinatra](https://github.com/makevoid/mkvstack/tree/master/sinatra)
+### for sinatra stack see: [mkvstack/sinatra](https://github.com/makevoid/mkvstack/tree/master/sinatra)
 
 
 
