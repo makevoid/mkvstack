@@ -11,7 +11,7 @@ class App < Sinatra::Base
   configure :development do # use thin start
     register Sinatra::Reloader
     also_reload ["models/*.rb"]
-    set :public, "public"
+    set :public_folder, "public"
     set :static, true
   end
   

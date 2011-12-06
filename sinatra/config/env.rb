@@ -9,7 +9,7 @@ Bundler.require :models
 
 # mysql
 #
-# env = ENV["RACK_ENV"]
+# env = ENV["RACK_ENV"] || "development"
 # if env == "production"
 #   pass = File.read(File.expand_path "~/.password").strip
 #   user = "root:#{pass}@" 
