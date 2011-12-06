@@ -1,31 +1,27 @@
-require 'bundler'
+path = File.expand_path "../../", __FILE__
+
 require 'bundler/setup'
+Bundler.require :models
 
-env = ENV["RACK_ENV"] || "development"
+# sqlite
+#
+# DataMapper.setup :default, "sqlite://#{APP_PATH}/db/app.sqlite"
 
-# require 'dm-core'
-# require 'dm-sqlite-adapter'
-# require 'dm-mysql-adapter'
-# require 'dm-migrations'
-# require 'dm-validations'
-# 
-# user = "" 
-# 
+# mysql
+#
+# env = ENV["RACK_ENV"]
 # if env == "production"
 #   pass = File.read(File.expand_path "~/.password").strip
 #   user = "root:#{pass}@" 
 # end
 # 
-# DataMapper.setup :default, "mysql://#{user}localhost/handsonxp_#{env}"
-# DataMapper.setup :default, "sqlite://#{APP_PATH}/db/app.sqlite"
-# 
-# 
-# Dir.glob("#{APP_PATH}/models/*").each do |model|
-#   require model
-# end
+# DataMapper.setup :default, "mysql://#{user}localhost/CHANGEME_#{env}"
 
 
-# require 'extlib'
+# DataMapper::Model.raise_on_save_failure = true 
 
+
+Dir.glob("#{path}/models/*.rb").each do |model|
+  require model
+end
 require 'voidtools'
-include Voidtools::Sinatra::ViewHelpers

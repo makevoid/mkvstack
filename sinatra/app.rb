@@ -1,28 +1,28 @@
-require 'haml'
-require 'sass'
-require 'sinatra/base'
-require 'sinatra/reloader'
-
 path = File.expand_path "../", __FILE__
 APP_PATH = path
+
+require 'bundler/setup'
+Bundler.require :default
+
 
 class App < Sinatra::Base
   require "#{APP_PATH}/config/env"
   
   configure :development do # use thin start
     register Sinatra::Reloader
-    also_reload ["controllers/*.rb", "models/*.rb"]
+    also_reload ["models/*.rb"]
     set :public, "public"
     set :static, true
   end
   
-  set :haml, { :format => :html5 }
-  require 'rack-flash'
-  enable :sessions
-  use Rack::Flash
-  require 'sinatra/content_for'
+  require "#{APP_PATH}/config/env"
+  include Voidtools::Sinatra::ViewHelpers
+
+  require "#{APP_PATH}/config/sinatra_env"
   helpers Sinatra::ContentFor
-  set :method_override, true
+  
+  require "#{APP_PATH}/lib/view_helpers"
+  helpers ViewHelpers
 
   def not_found(object=nil)
     halt 404, "404 - Page Not Found"
@@ -30,10 +30,6 @@ class App < Sinatra::Base
 
   get "/" do
     haml :index
-  end
-
-  get '/css/main.css' do
-    sass :main
   end
   
 end

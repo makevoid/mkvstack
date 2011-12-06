@@ -2,15 +2,16 @@
 %html{ html_attrs("en") }
   %head
     %title Hello world
-    %link{ href: "/css/main.css", rel: "stylesheet" }
+    %link{ href: "/css/app.css", rel: "stylesheet" }
     %meta{ charset: "utf-8" }
     %meta{ :"http-equiv" => "X-UA-Compatible", content: "IE=edge,chrome=1" }
     %meta{ name: "description", content: "" }
     %meta{ name: "keywords", content: "" }    
-    %meta{ name: "author", content: "" }    
-    -# %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
-    %script{ src: "/js/modernizr.js", type: "text/javascript" }
-    = yield_content :head
+    %meta{ name: "author", content: "Francesco 'makevoid' Canessa" }    
+    -#%meta{ name: "viewport", content: "width=device-width, initial-scale=1.0, user-scalable=no" }
+    -#%meta{ name: "apple-mobile-web-app-capable", content: "yes" }
+    -#%meta{ name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" }
+    %script{ src: "/js/vendor/modernizr.js", type: "text/javascript" }
   %body{ class: body_class }
     #wrap
       #container
@@ -20,10 +21,15 @@
         #content
           = yield
         %footer
-    %script{ src: "/js/jquery.js", type: "text/javascript" }
-    %script{ src: "/js/main.js", type: "text/javascript" }
-    = yield_content :end
+    %script{ src: "/js/vendor/underscore.js", type: "text/javascript" }
+    %script{ src: "/js/vendor/haml.js", type: "text/javascript" }
+    -# %script{ src: "/js/vendor/jquery.js", type: "text/javascript" }
+    %script{ src: "/js/vendor/zepto.js", type: "text/javascript" }
+    %script{ src: "/js/vendor/backbone.js", type: "text/javascript" }
+    %script{ src: "/js/app.js", type: "text/javascript" }
+    = yield_content :head
     %script{ type: "text/javascript" }
       $(function(){
       = yield_content :jquery
       });
+    = haml :"_backbone_views"

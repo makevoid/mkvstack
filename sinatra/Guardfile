@@ -1,12 +1,18 @@
-guard 'livereload' do
-  watch(%r{.+\.(rb|ru)})
-  watch(%r{(models|config|lib)/.+\.(rb|yml)})
-  watch(%r{views/.+\.(haml|sass|html|markdown|erb)})
-  watch(%r{public/js/.+\.(js|coffee)})
-  watch(%r{public/css/.+\.(sass|css)})
-  watch(%r{public/.+\.(css|js|html)})
+# https://github.com/guard/guard#readme
+
+guard "compass" do
+  watch(/^sass\/(.*)\.s[ac]ss/)
 end
 
-guard 'coffeescript', :input => 'public/js'
 
-# More infos at https://github.com/guard/guard#readme
+guard 'coffeescript', :input => 'coffee', :output => 'public/js'
+
+
+guard 'livereload' do
+  watch %r{coffee/.+\.coffee}
+  watch %r{sass/.+\.sass}
+  watch %r{views/.+\.haml}
+  watch %r{models/.+\.rb}
+  watch %r{.+\.rb}
+  watch %r{lib/.+\.rb}
+end

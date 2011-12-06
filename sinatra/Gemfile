@@ -1,16 +1,36 @@
-source "http://rubygems.org"
+source :rubygems
 
 gem 'haml'
-gem 'sass'
+gem "sass"
 gem 'sinatra'
 gem "sinatra-content-for"
-gem "sinatra-reloader"
+gem "sinatra-reloader", require: "sinatra/reloader"
 gem 'rack-flash'
-# gem 'dm-core'
-# gem 'dm-sqlite-adapter'
-# gem 'dm-mysql-adapter'
-# gem 'dm-migrations'
-# gem 'dm-validations'
-# gem "extlib"
 
-gem 'voidtools', git: "git://github.com/makevoid/voidtools"
+group :models do
+  gem "json"
+  gem "whois"
+  
+  # gem 'redis'
+  gem 'dm-core'
+  # gem 'dm-sqlite-adapter'
+  gem 'dm-mysql-adapter'
+  # gem 'dm-types'
+  gem 'dm-migrations'
+  gem 'dm-transactions'
+end
+
+gem "json"
+gem 'voidtools'
+
+gem "guard"
+gem "guard-livereload"
+gem "guard-coffeescript"
+gem 'guard-compass'
+
+group :test do
+  gem "rspec"
+  gem "webrat"
+  gem "autotest-growl"
+  gem "capybara"
+end
