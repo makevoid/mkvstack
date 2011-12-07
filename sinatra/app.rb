@@ -19,6 +19,7 @@ class App < Sinatra::Base
   include Voidtools::Sinatra::ViewHelpers
 
   require "#{APP_PATH}/config/sinatra_env"
+  enable :sessions
   helpers Sinatra::ContentFor
   
   require "#{APP_PATH}/lib/view_helpers"
