@@ -24,4 +24,5 @@ Bundler.require :models
 Dir.glob("#{path}/models/*.rb").each do |model|
   require model
 end
+DataMapper.finalize
 require 'voidtools'
