@@ -6,8 +6,16 @@ set :domain,      "makevoid.com"
 
 # #set :repository,  "svn://#{domain}/svn/#{application}"
 # #default_run_options[:pty] = true  # Must be set for the password prompt from git to work
-# set :repository, "git://github.com/makevoid/#{application}.git"  # public
-set :repository, "ssh+git://git@makevoid.com/git/#{application}"  # private @makevoid.com
+
+# public
+# set :repository, "git://github.com/makevoid/#{application}.git" 
+
+# private
+# set :repository, "git@github.com:makevoid/#{application}.git"
+# ssh_options[:forward_agent] = true
+
+# private @makevoid.com
+set :repository, "ssh+git://git@makevoid.com/git/#{application}"  # 
 
 set :scm, "git"
 set :branch, "master"
@@ -22,11 +30,8 @@ set :use_sudo,    false
 set :deploy_to,   "/www/#{application}"
 
 
-# Uncomment for Github Private repo
-#
 # default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 # set :scm_passphrase, password  # The deploy user's password
-# ssh_options[:forward_agent] = true
 # set :deploy_via, :remote_cache
 
 
