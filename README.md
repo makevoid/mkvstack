@@ -1,5 +1,7 @@
 # MKV stack
 
+### [UPDATE] for sinatra stack see: [sinatrize](https://gist.github.com/2385559)
+
 ## setup a new rails or sinatra application 
 
 - Gemfile
@@ -11,16 +13,11 @@
 - analytics
 
 
-
-### for sinatra stack see: [mkvstack/sinatra](https://github.com/makevoid/mkvstack/tree/master/sinatra)
-
-
-
 # TODO
 
-- document everything on both rails and sinatra stacks
+- rails stack need updates
+- document everything
 - rake tasks to update dependencies:
   - latest jquery
 - capistrano extract every config and make the file required by all config/deploy.rb(s)
-- package exception notification
-
+- package exception notification in a gem
